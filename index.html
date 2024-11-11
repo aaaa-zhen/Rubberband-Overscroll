@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, sans-serif;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+
+    .container {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .scroll-container {
+      width: 300px;
+      height: 400px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .header {
+      padding: 16px;
+      font-weight: bold;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      background: white;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .rubberband {
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .overscroll {
+      overflow-y: auto;
+      overscroll-behavior: auto;
+    }
+
+    .content {
+      padding: 16px;
+    }
+
+    .item {
+      padding: 12px;
+      border-bottom: 1px solid #eee;
+      color: #333;
+    }
+
+    .instructions {
+      text-align: center;
+      margin-bottom: 20px;
+      padding: 16px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="instructions">
+    👆 在移动设备上滑动下面的列表来体验不同的滚动效果
+  </div>
+  
+  <div class="container">
+    <div class="scroll-container">
+      <div class="header">Rubberband 效果 (iOS 风格)</div>
+      <div class="rubberband">
+        <div class="content">
+          <script>
+            // 生成 20 个列表项
+            for(let i = 1; i <= 20; i++) {
+              document.write(`<div class="item">列表项 ${i}</div>`);
+            }
+          </script>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-container">
+      <div class="header">Overscroll 效果 (Android 风格)</div>
+      <div class="overscroll">
+        <div class="content">
+          <script>
+            // 生成 20 个列表项
+            for(let i = 1; i <= 20; i++) {
+              document.write(`<div class="item">列表项 ${i}</div>`);
+            }
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
